@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            background: crimson;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, serif;
+        }
+
+        main {
+            padding: 10px;
+        }
+
+        ul{
+            display:flex;
+        }
+
+        li{
+            list-style-type: none;
+            padding:5px;
+            box-shadow: 0 0 1px;
+            margin-right: 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<h2>User List</h2>
+<main>
+    <ul>
+        <li th:each="user:${users}">
+            Name : <span th:text="${user.name()}"></span><br/>
+            Email : <span th:text="${user.email()}"></span><br/>
+            Age : <span th:text="${user.age()}"></span><br/>
+        </li>
+    </ul>
+</main>
+</body>
+</html>
